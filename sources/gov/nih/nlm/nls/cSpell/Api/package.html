@@ -1,0 +1,33 @@
+<html>
+<body>
+<P>This package provides Java APIs of CSpells - CSpellApi class. They are briefly described as follows:
+
+<ul>
+<p><li>Instantiate a CSpellApi (Constructor)
+	<ul>
+	<li><code>public CSpellApi()</code>
+	<li><code>public CSpellApi(String configFile)</code>
+	<li><code>public CSpellApi(String configFile, boolean debugFlag)</code>
+	<li><code>public CSpellApi(Hashtable<String, String> properties)</code>
+	<li><code>public CSpellApi(String configFile, Hashtable<String, String> properties)</code>
+	</ul>
+
+<p><li>Process (public methods)
+	<ul>
+	<li><code>public String ProcessToStr(String inText)</code>
+	<li><code>public String ProcessToStr(String inText, int funcMode, int rankMode)</code>
+	<li><code>public ArrayList<TokenObj> ProcessToTokenObj(String inText)</code>
+	<li><code>public ArrayList<TokenObj> ProcessToTokenObj(String inText, boolean debugFlag)</code>
+	<li><code>public ArrayList<TokenObj> ProcessToTokenObj(String inText, int funcMode, int rankMode, boolean debugFlag)</code>
+	</ul>
+
+<p><li>Close the CSpellApi: 
+	<ul>
+	<li><code>public void Close()</code>
+	</ul>
+</ul>
+
+@since 2018
+
+</body>
+</html>

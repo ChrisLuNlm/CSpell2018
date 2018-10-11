@@ -1,0 +1,75 @@
+package gov.nih.nlm.nls.cSpell.Ranker;
+
+import java.util.*;
+import org.apache.commons.codec.language.*;
+
+/*****************************************************************************
+* This class provides a java class to get the Caverphone 2 form of a string
+* using org.apache.commons.codec.language.DoubleMetaphone.
+*
+* @author NLM NLS Development Team
+*
+* @version    V-2016
+****************************************************************************/
+public class Caverphone2
+{
+	// private constructor
+	private Caverphone2()
+	{
+	}
+
+	// public method
+    public static void main(String[] args) 
+	{
+		ArrayList<String> inStrList = new ArrayList<String>();
+
+		if(args.length == 1)
+		{
+			inStrList.add(args[0]);
+		}
+		else if (args.length == 0)
+		{
+			inStrList.add("zinc trisulphonatophthalocyanine");
+			inStrList.add("anemia");
+			inStrList.add("anaemia");
+			inStrList.add("yuppie flu");
+			inStrList.add("yuppy flu");
+			inStrList.add("toxic edema");
+			inStrList.add("toxic oedema");
+			inStrList.add("careful");
+			inStrList.add("carefully");
+			inStrList.add("zyxorin");
+			inStrList.add("zyxoryn");
+			inStrList.add("zymographical");
+			inStrList.add("zymographically");
+			inStrList.add("absorption test");
+			inStrList.add("absorption tests");
+		}
+        else if(args.length > 0)
+		{
+            System.err.println("*** Usage: java Caverphone2 <inStr>");
+            System.exit(1);
+        }
+
+		// print out
+		for(String inStr:inStrList) 
+		{
+			String caverphone = GetCaverphone(inStr); 
+			System.out.println("- [" + inStr + "] => [" + caverphone + "]");
+		}
+    }
+
+	// Compute Edit (Levenshtein) distance
+	public static String GetCaverphone(String inStr)
+	{
+		if(cp_ == null)
+		{
+			cp_ = new org.apache.commons.codec.language.Caverphone2();
+		}
+		String outStr = cp_.encode(inStr);
+        return outStr;
+    }
+
+	//private methods
+	private static org.apache.commons.codec.language.Caverphone2 cp_ = null;
+}
